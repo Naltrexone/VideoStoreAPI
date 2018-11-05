@@ -1,9 +1,17 @@
 require "test_helper"
 
 describe Customer do
-  let(:customer) { Customer.new }
+  let(:bob) { Customer.new }
 
-  it "must be valid" do
-    value(customer).must_be :valid?
+ describe "it tests the validity" do
+  it "raises error is name not present" do
+    bob.name = nil
+    result = bob.valid?
+    result.must_equal false
   end
+ end
+
+ describe "it tests relationships" do
+
+ end
 end
