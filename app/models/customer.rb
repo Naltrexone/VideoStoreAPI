@@ -6,4 +6,6 @@ class Customer < ApplicationRecord
   validate :state, presence: true
   validate :postal_code, presence: true
   validate :phone, presence: true
+
+  has_many :rentals
 end
