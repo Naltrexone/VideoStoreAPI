@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  overview: MyString
-  release_date: 2018-11-05
+scream:
+  title: Scream
+  overview: Horror Movie
+  release_date: 2005-11-10
   inventory: 1
 
-two:
-  title: MyString
-  overview: MyString
-  release_date: 2018-11-05
-  inventory: 1
+titanic:
+  title: Titanic
+  overview: Sunken Ship Drama
+  release_date: 2001-11-05
+  inventory: 3
+
+sandlot:
+  title: Sandlot
+  overview: Summer, baseball, and friends
+  release_date: 1990-01-01
+  inventory: 2
