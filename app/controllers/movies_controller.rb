@@ -28,7 +28,6 @@ class MoviesController < ApplicationController
         errors: movie.errors.messages
       }, status: :bad_request
     end
-
   end
 
   private
