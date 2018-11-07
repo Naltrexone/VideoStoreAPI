@@ -17,3 +17,9 @@ sandlot:
   overview: Summer, baseball, and friends
   release_date: 1990-01-01
   inventory: 2
+
+beemovie:
+  title: Beemovie
+  overview: Cute bees and their journeys
+  release_date: 2005-10-03
+  inventory: 0

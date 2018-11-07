@@ -21,6 +21,6 @@ two:
 three:
   movie: scream
   customer: tim
-  check_out: 2018-11-05
-  due_date: 2018-11-12
+  check_out: 2016-11-05
+  due_date: 2016-11-12
   status: "in"
