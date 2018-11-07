@@ -16,10 +16,8 @@ class Customer < ApplicationRecord
     self.rentals.each do |rental|
      if rental.status == "out"
        num_out += 1
-     elsif rental.status == "in"
-       num_in += 1
      end
     end
-    return (movies_count = num_out - num_in)
+    return (movies_count = num_out)
  end
 end

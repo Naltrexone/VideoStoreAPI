@@ -21,10 +21,8 @@ class RentalsController < ApplicationController
   end
 
   def checkin
-    rental = Rental.new(rental_params)
-    rental.due_date = nil
+    rental = Rental.find_by(movie_id: rental_params[:movie_id], customer_id: rental_params[:customer_id], status: "out")
     rental.status = "in"
-
     if rental.save
       render json: rental.as_json(except: [:created_at, :updated_at]), status: :ok
     else
@@ -32,6 +30,7 @@ class RentalsController < ApplicationController
         errors: rental.errors.messages
       }, status: :bad_request
     end
+
   end
 
   private
