@@ -72,6 +72,19 @@ describe Movie do
     end
   end
 
-  describe 'custom methods' do
+  describe 'available_inventory' do
+    it 'can calculate available_inventory for movie' do
+      movie = movies(:scream)
+      avail_inv = movie.available_inventory
+
+      expect(avail_inv).must_equal 0
+    end
+
+    it 'can calculate available_inventory for movie that has not been rented' do
+      movie = movies(:sandlot)
+      avail_inv = movie.available_inventory
+
+      expect(avail_inv).must_equal movie.inventory
+    end
   end
 end
