@@ -25,7 +25,7 @@ describe CustomersController do
   end
 
   it "returns customers with exactly the required fields" do
-    keys = %w(id name phone postal_code registered_at)
+    keys = %w(id movies_checked_out_count name phone postal_code registered_at)
 
     # Act
     get customers_path
