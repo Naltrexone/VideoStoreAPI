@@ -57,7 +57,7 @@ describe Rental do
     end
   end
 
-  describe "it tests the method that checks if movie is available" do
+  describe "custom method " do
     it "checks if no movie is available when all are checked out" do
       movie = movies(:scream)
       answer = rental.movie_avail?(movie.id)
