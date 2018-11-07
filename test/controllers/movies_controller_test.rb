@@ -51,7 +51,7 @@ describe MoviesController do
     end
 
     it "returns movie with the required fields" do
-      fields = %w(inventory overview release_date title)
+      fields = %w(available_inventory inventory overview release_date title)
 
       get movie_path(movies(:scream).id)
       body = JSON.parse(response.body)
