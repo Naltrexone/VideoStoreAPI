@@ -3,6 +3,14 @@ require "test_helper"
 describe Customer do
   let(:customer) { customers(:bob) }
 
+  describe "it tests custom method" do
+    it "adds to count of movies checked out when status is out" do
+      rental = rentals(:one)
+      answer = customer.movies_checked_out_count
+      answer.must_equal 1
+    end
+  end
+
  describe "it tests the validity" do
   it "checks validity when all fields are present" do
     result = customer.valid?
