@@ -47,4 +47,38 @@ describe RentalsController do
       must_respond_with :bad_request
     end
   end
+
+  describe 'checkin' do
+
+    it "checks in a valid rental" do
+      movie = movies(:scream)
+      customer = customers(:bob)
+      expect {
+        post checkin_path, params: {customer_id: customer.id, movie_id: movie.id}
+      }.wont_change "Rental.count"
+
+      must_respond_with :success
+      body = JSON.parse(response.body)
+      expect(body).must_be_kind_of Hash
+      expect(body).must_include "status"
+    end
+
+     it "does not check in a movie if parameters are invalid" do
+      movie = movies(:scream)
+       expect {
+        post checkin_path, params: {customer_id: -1, movie_id: movie.id}
+      }.wont_change "Rental.count"
+
+      must_respond_with :not_found
+    end
+
+     it "does not check in if parameters are missing" do
+      movie = movies(:scream)
+       expect {
+        post checkin_path, params: {movie_id: movie.id}
+      }.wont_change "Rental.count"
+
+      must_respond_with :not_found
+    end
+  end
 end
