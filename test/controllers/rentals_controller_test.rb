@@ -63,7 +63,7 @@ describe RentalsController do
       expect(body).must_include "status"
     end
 
-     it "does not check in a movie if parameters are invalid" do
+    it "does not check in a movie if parameters are invalid" do
       movie = movies(:scream)
        expect {
         post checkin_path, params: {customer_id: -1, movie_id: movie.id}
@@ -72,7 +72,7 @@ describe RentalsController do
       must_respond_with :not_found
     end
 
-     it "does not check in if parameters are missing" do
+    it "does not check in if parameters are missing" do
       movie = movies(:scream)
        expect {
         post checkin_path, params: {movie_id: movie.id}
